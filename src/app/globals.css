@@ -1,27 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+::-webkit-scrollbar {
+  display: none;
 }
+body {
+  overflow-x: hidden;
+}
+.para {
+  font-family: "Dosis", sans-serif;
+}
+.main {
+  animation: big 10s ease forwards;
+  animation-timeline: view(10vh);
+}
+@keyframes big {
+  0% {
+    width: 400px;
+    opacity: 1;
+  }
+  60% {
+    width: 400px;
+    opacity: 1;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  100% {
+    width: 800px;
+    opacity: 0;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (max-width: 768px) {
+  .navlink {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 40px;
+    clip-path: circle(0px at 90% -10%);
+    transition: all 1s ease;
+    color: black;
+    background-color: white;
+    z-index: 10;
+  }
+  .open {
+    clip-path: circle(1100px at 90% -10%);
+  }
+  .holder {
+    flex-direction: column;
+  }
+}
+
+.dice {
+  transition: 0.5s ease;
+}
+.dice:hover {
+  transform: translateY(-10px);
+}
+
+.pImg {
+  transition: 10s ease-in-out;
+  overflow: hidden;
+  transform-origin: bottom right;
+}
+.pImg:hover {
+  transform: translateY(calc(-100% + 80vh));
+}
+@media (max-width: 640px) {
+  .pImg {
+    transition: 10s ease-in-out;
+    overflow: hidden;
+  }
+  .pImg:hover {
+    transform: translateY(calc(-100% + 70vh));
+  }
+}
+@media (max-width: 768px) {
+  .pImg {
+    transition: 10s ease-in-out;
+    overflow: hidden;
+  }
+  .pImg:hover {
+    transform: translateY(calc(-100% + 80vh));
+  }
+}
+@media (max-width: 1024px) {
+  .pImg {
+    transition: 10s ease-in-out;
+    overflow: hidden;
+  }
+  .pImg:hover {
+    transform: translateY(calc(-100% + 60vh));
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 61vh;
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+
+  transform: translateY(-50%);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 0 black;
+}
+
+.text-container {
+  overflow: hidden;
+  margin-top: 350px;
+  width: 100%;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.text-container p {
+  padding: 20px;
+  transition: 0.2s ease;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .obj:hover {
+    height: 65%;
+  }
+}
+.obj {
+  transition: 0.4s ease;
+}
+.btn {
+  transition: 0.3s;
+}
+@keyframes leftMove {
+  0% {
+    transform: translateX(-400px);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.cont {
+  animation: leftMove 2s ease-in-out forwards;
+  animation-timeline: view();
+}
+.cPage {
+  background: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-size: auto;
+}
+.pPage {
+  background: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+
+  background-size: auto;
+}
+.item {
+  transition: 0.8s ease;
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  font-family: system-ui;
+}
+.item:hover {
+  -webkit-text-fill-color: black;
+}
+
+/* cursor images */
+.github {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>'),
+    pointer;
+}
+.linkedin {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>'),
+    pointer;
+}
+.twitter {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>'),
+    pointer;
+}
+.email {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'),
+    pointer;
+}
+.instagram {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>'),
+    pointer;
 }
