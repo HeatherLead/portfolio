@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar />
 
       <div className="head flex justify-evenly flex-row items-center  mt-20  md:pt-20 pb-20 flex-wrap-reverse">
-        <div>
+        <div className="p-4">
           <h1 className=" text-center lg:text-6xl mt-10 text-4xl font-bold  -skew-x-6">
             Full Stack Developer
           </h1>
@@ -52,7 +52,7 @@ export default function Home() {
             />
           </span>
         </div>
-        <div className="about flex shadow-lg rounded-md p-2  items-stretch flex-col">
+        <div className="about flex shadow-lg rounded-md p-2  items-stretch flex-col p-4">
           <h1 className="  text-3xl text-blue-600 font-bold">About Me</h1>
           <h2 className="para text-lg pt-2 max-w-[500px]">
             I am Junior Full Stack Developer with a Wide Range of Skills, I am
