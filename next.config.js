@@ -2,11 +2,3 @@
 const nextConfig = {};
 
 module.exports = nextConfig;
-module.exports = {
-  experimental: {
-    optimizeCss: true,
-    optimizeImages: true,
-    optimizeFonts: true,
-    automaticStaticOptimization: false,
-  },
-};
